@@ -1,0 +1,56 @@
+subir o ambiente
+docker-compose up -d
+docker-compose ps
+
+docker exec -it appproduct bash
+dentro do containner executar o cmd
+go mod init github.com/adortolan/go-hexagonal
+
+-- go.mod serve para ficar baixando as atualizações das dependencias
+
+criar a pasta application
+dentro da pasta application criar o arquivo
+product.go
+criar o arquivo
+product_test.go
+
+**Atenção**
+    No go quando declarar um metodo com a primeira letra maiuscula é como se fosse public o metodo
+    Quando for minisculo a primeira letra é private o metodo
+**
+
+Dentro do terminal rodar go test
+
+/*
+ São normalmente criados para testar o comportamento de outros objetos. ... Em outras palavras,
+ os objetos mock são objetos “falsos” que simulam o comportamento de uma classe ou objeto “real”
+ para que possamos focar o teste na unidade a ser testada
+*/
+
+Para rodar o mock do Go tem que digitar o comando
+Dentro da pasta appliation vai criar uma pasta mocks com o arquivo appliation.go
+--
+mockgen -destination=aplicacao/mocks/aplicacao.go -source=aplicacao/product0.go aplicacao
+
+-- Comando para importar as dependencias
+go get -v github.com/stretchr/testify/require
+
+-- Atualizar os dados dentro do containner
+apt-get update
+-- Instala o sqlite3
+apt-get install sqlite3
+--cria o banco em branco
+touch sqlite3.db
+sqlite3 sqlite.db
+create table products(id string, name string, price float, status string);
+.tables
+
+-- Componente cobra para iniciar o comando interface
+cobra init --pkg-name=github.com/adortolan/go-hexagonal
+
+sudo sh -c "echo 'export GOROOT=/home/adortolan/go' | tee -a /etc/profile"
+sudo apt-get remove golang-go
+
+-- install
+https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04
+
